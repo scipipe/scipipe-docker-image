@@ -10,7 +10,7 @@ RUN go get github.com/stretchr/testify
 RUN go get gopkg.in/urfave/cli.v1
 RUN go get github.com/tools/godep
 RUN go get k8s.io/client-go/...
-RUN cd $GOPATH/src/k8s.io/client-go
-RUN git checkout v2.0.0
-RUN godep restore ./...
-RUN cd $GOPATH/src/github.com/scipipe/scipipe
+RUN cd $GOPATH/src/k8s.io/client-go && \
+    git checkout v2.0.0 && \
+    godep restore ./...
+RUN cd /scipipe-data
